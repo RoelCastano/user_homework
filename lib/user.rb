@@ -17,8 +17,15 @@ class User
         @courses.delete(course)
     end
 
-    def self.killUser(user)
-        user = nil
+    def isTeacher
+        @isTeacher
+    end
+
+    def isValid
+        if (@username && @email)
+            return true
+        end
+        return false
     end
 
 end
